@@ -12,6 +12,7 @@ Welcome to my **personal portfolio**, a showcase of my skills, projects, and exp
 
 - **Frontend Framework:** Astro.js v5 - Vue.js v3.5  
 - **Language:** TypeScript  
+- **THREE JS:** Three JS Library
 
 ## 🚀 Live Demo
 
