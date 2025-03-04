@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+
+interface Props{
+  imageProject:string;
+  project:string;
+  descriptionProject:string;
+  technologies:string[];
+  isPrivate:boolean;
+  linkProject?:string;
+}
+
+const {imageProject ,project, descriptionProject, technologies, isPrivate = true, linkProject} = Astro.props;
+
+---
+
+
+<article class="bg-[#24004f] px-4 pt-4 pb-10 w-[360px] rounded-sm">
+  {
+    isPrivate ?
+    (
+    <div class="mb-4">
+      <Image 
+        src={imageProject}
+        alt="enterprise image card"
+        width={500}
+        height={500}
+        class="w-full rounded-sm aspect-[16/12] object-cover"
+      />
+    </div>
+    ) :
+    (
+    <a href={linkProject} target="_blank" class="mb-4">
+      <Image 
+        src={imageProject}
+        alt="enterprise image card"
+        width={500}
+        height={500}
+        class="w-full rounded-sm aspect-[16/12] object-cover"
+      />
+    </a>
+    )
+  }
+
+  <span class="text-violet-400 text-lg">{isPrivate ? "PRIVATE" : "PUBLIC"}</span>
+  <h3 class="text-violet-300 mt-3 text-2xl font-geist-bold mb-2">{project}</h3>
+  <p class="text-violet-100 font-geist-light text-sm mb-6">{descriptionProject}</p>
+  <div class="flex flex-wrap gap-2 mt-2">
+    {technologies.map((tech) => (
+      <span class="bg-purple-500 text-sm px-2 py-1 rounded-lg">
+        {tech}
+      </span>
+    ))}
+  </div>
+</article>

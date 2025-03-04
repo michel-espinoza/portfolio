@@ -1,0 +1,172 @@
+---
+import { Image } from "astro:assets";
+---
+
+<article class="relative flex justify-center items-center">
+  <div class="max-w-1/2 flex gap-6 relative">
+    
+    <!-- Contenedor del texto con efecto de escritura -->
+    <div class="flex flex-col gap-6 justify-center items-start">
+      <h1 class="font-geist-black text-5xl">
+        <span id="typing-text"></span><span id="cursor" class="text-purple-500">|</span>
+      </h1>
+  
+      <p id="my-description" class="font-geist-medium text-xl">
+        I am a self-taught developer with a strong passion for continuous learning and exploring new technologies. 
+        Over time, my professional focus has evolved toward web development and hybrid mobile applications. 
+        While my expertise lies primarily in front-end development, I also have experience with backend technologies.
+      </p>
+    </div>
+
+    <div class="hologram min-w-[400px]">
+      <Image
+        class="hologram object-cover w-full"
+        src="/Im.png"
+        alt="Logo portfolio"
+        width={500}
+        height={500}
+        quality="high"
+        loading="eager"
+      />
+    </div>
+  </div>
+  
+</article>
+
+<style>
+
+  #my-description::before{
+    content: "{";
+    color: #a855f7; /* Purple-500 */
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  #my-description::after{
+    content: "}";
+    color: #a855f7; /* Purple-500 */
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 2rem;
+  }
+
+  /* Animación del cursor parpadeante */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .blinking-cursor {
+    animation: blink 0.9s step-end infinite;
+  }
+
+  .image-overlay img {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(200, 200, 200, 0.5));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(200, 200, 200, 0.5));
+  }
+
+  /* Holograma */
+
+  .hologram {
+    position: relative;
+    /* width: 100%; */
+    /* height: auto; */
+    filter: grayscale(90%) hue-rotate(200deg) brightness(1.8) contrast(1.3);
+    opacity: 0.85; /* Un poco transparente */
+    animation: flicker 1.5s infinite alternate;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.8; filter: brightness(1); }
+    100% { opacity: 1; filter: brightness(1.3); }
+  }
+
+  /* Barras de escaneo animadas */
+  .hologram::after {
+    content: "";
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 94, 255, 0) 40%,
+      rgba(0, 136, 255, 0.2) 50%,
+      rgba(0, 60, 255, 0) 60%
+    );
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+
+  /* Ruido holográfico */
+  .hologram::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/noisy.png");
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+  }
+
+</style>
+
+<script>
+const text = "Hi, I'm <Michel Espinoza />";
+const typingSpeed = 100;
+const erasingSpeed = 50;
+const delayBeforeErase = 2000;
+let index = 0;
+let isDeleting = false;
+const typingElement = document.getElementById("typing-text");
+const cursorElement = document.getElementById("cursor") as HTMLElement;
+
+function typeEffect() {
+  if (!typingElement) return;
+
+  // Se corta el texto sin formato
+  const rawText = text.slice(0, index)
+    .replace("<", "&lt;")
+    .replace(">", "&gt;");
+
+  // Se aplica formato con los spans en las etiquetas
+  const formattedText = rawText
+    .replace("&lt;", `<span class="text-purple-500">&lt;</span>`)
+    .replace("/&gt;", `<span class="text-purple-500">/&gt;</span>`);
+
+  typingElement.innerHTML = formattedText;
+
+  if (isDeleting) {
+    index--;
+    cursorElement.classList.remove("blinking-cursor");
+
+    if (index === 0) {
+      isDeleting = false;
+      setTimeout(typeEffect, typingSpeed);
+      return;
+    }
+    setTimeout(typeEffect, erasingSpeed);
+  } else {
+    index++;
+    cursorElement.classList.remove("blinking-cursor");
+
+    if (index > text.length) {
+      cursorElement.classList.add("blinking-cursor");
+      isDeleting = true;
+      setTimeout(typeEffect, delayBeforeErase);
+      return;
+    }
+    setTimeout(typeEffect, typingSpeed);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(typeEffect, 500);
+});
+
+</script>

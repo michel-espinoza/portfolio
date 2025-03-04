@@ -1,0 +1,126 @@
+---
+import CardTechnologies from "../CardTechnologies.astro";
+import PresentationSection from "../shared/PresentationSection.astro";
+
+const frontendImages = [
+
+  { src: "/tech/react.png", alt: "React.js" },
+  { src: "/tech/astro.png", alt: "Astro" },
+  { src: "/tech/tailwind.png", alt: "Tailwind CSS" },
+  { src: "/tech/angular.png", alt: "Angular" },
+  { src: "/tech/ionic.png", alt: "Ionic" },
+  { src: "/tech/nextjs.png", alt: "Next.js" },
+];
+
+const mobileImages = [
+
+  { src: "/tech/react-native.png", alt: "React Native" },
+  { src: "/tech/flutter.png", alt: "Flutter" },
+];
+
+const backendImages = [
+
+  { src: "/tech/fastapi.svg", alt: "Fastapi" },
+  { src: "/tech/django.png", alt: "Django" },
+  { src: "/tech/node.png", alt: "Nodejs" },
+];
+
+const dataBasesImages = [
+
+  { src: "/tech/postgresql.png", alt: "PostgreSQL" },
+  { src: "/tech/mongo.svg", alt: "MongoDB" },
+  { src: "/tech/mysql.png", alt: "MySQL" },
+];
+
+const devOpsImages = [
+
+  { src: "/tech/aws-iam.svg", alt: "AWS IAM" },
+  { src: "/tech/aws-s3.png", alt: "AWS S3" },
+  { src: "/tech/docker.png", alt: "Docker" },
+];
+
+const languagesImages = [
+
+  { src: "/tech/typescript.png", alt: "Typescript" },
+  { src: "/tech/javascript.png", alt: "Javascript" },
+  { src: "/tech/python.png", alt: "Python" },
+  { src: "/tech/php.png", alt: "Php" },
+  { src: "/tech/dart.png", alt: "Dart" },
+];
+
+const othersImages = [
+
+  { src: "/tech/git.png", alt: "Git" },
+  { src: "/tech/figma.svg", alt: "Figma" },
+  { src: "/tech/postman.png", alt: "Postman" },
+  { src: "/tech/linux.png", alt: "Linux" },
+  { src: "/tech/windows.png", alt: "Windows" },
+  { src: "/tech/macos.png", alt: "Mac os" },
+];
+---
+
+<article class="flex justify-center items-center flex-col my-52">
+  <PresentationSection
+    subtitle="MY TECH STACK"
+    title="Technologies"
+    description={[
+      "Throughout my career as a developer, I have worked with various technologies to build efficient and scalable solutions. For web development, I use Next.js, React.js, and Astro Build, complemented by Tailwind CSS to design modern user interfaces. In mobile development, I have experience with React Native and Flutter, enabling me to create high-performance hybrid applications.",
+      "On the backend, I have worked with FastAPI, Django, and Node.js, integrating databases like PostgreSQL and MongoDB for efficient data management. Additionally, I have experience with AWS S3 and Docker for cloud deployment and application management.",
+      "I am always focused on learning and adopting new technologies to improve the quality and performance of my developments."
+    ]}
+  />
+
+  <section class="w-1/2 flex flex-col justify-center items-center gap-4">
+    <CardTechnologies 
+      imageTech={frontendImages.map((tech) => tech.src)} 
+      alt={frontendImages.map((tech) => tech.alt)} 
+      title="Frontend" 
+      techDescription=""
+    />
+
+    <CardTechnologies 
+      imageTech={languagesImages.map((tech) => tech.src)} 
+      alt={languagesImages.map((tech) => tech.alt)} 
+      title="Programming Languages" 
+      techDescription=""
+    />
+
+    <CardTechnologies 
+      imageTech={mobileImages.map((tech) => tech.src)} 
+      alt={mobileImages.map((tech) => tech.alt)} 
+      title="Mobile" 
+      techDescription=""
+    />
+
+    <CardTechnologies 
+      imageTech={backendImages.map((tech) => tech.src)} 
+      alt={backendImages.map((tech) => tech.alt)} 
+      title="Backend" 
+      techDescription=""
+    />
+
+    <CardTechnologies 
+      imageTech={dataBasesImages.map((tech) => tech.src)} 
+      alt={dataBasesImages.map((tech) => tech.alt)} 
+      title="Data Bases" 
+      techDescription=""
+    />
+
+    <CardTechnologies 
+      imageTech={devOpsImages.map((tech) => tech.src)} 
+      alt={devOpsImages.map((tech) => tech.alt)} 
+      title="Cloud & DevOps" 
+      techDescription=""
+    />
+
+    <CardTechnologies 
+      imageTech={othersImages.map((tech) => tech.src)} 
+      alt={othersImages.map((tech) => tech.alt)} 
+      title="Cloud & DevOps" 
+      techDescription=""
+    />
+
+
+
+  </section>
+</article>

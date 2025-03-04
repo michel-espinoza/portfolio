@@ -1,0 +1,93 @@
+---
+import Navbar from '../components/shared/Navbar.astro'
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body class="bg-black">
+		<Navbar/>
+		<main class="relative">
+			<slot />
+		</main>
+	</body>
+</html>
+
+
+
+
+<style>
+
+</style>
+<!-- <script>
+  import * as THREE from 'three';
+
+  const $bkg = document.getElementById('bkg');
+
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  // Inicializar Three.js
+  const scene = new THREE.Scene();
+
+  // Cámara
+  const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 2000);
+  camera.position.z = 300;
+  scene.add(camera);
+
+  // Renderizador
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize(w, h);
+  renderer.setClearColor(0x000000, 1); // Fondo negro para el espacio
+
+  $bkg?.appendChild(renderer.domElement);
+
+  // Luz ambiental
+  const light = new THREE.AmbientLight(0xffffff, 0.5);
+  scene.add(light);
+
+  // Geometría y partículas optimizadas con Points
+  const starGeo = new THREE.BufferGeometry();
+  const starVertices = [];
+  const NUM_OF_PARTICLES = 1000;
+
+  for (let i = 0; i < NUM_OF_PARTICLES; i++) {
+    starVertices.push(
+      Math.random() * 800 - 400, // X
+      Math.random() * 800 - 400, // Y
+      Math.random() * 1600 - 800 // Z
+    );
+  }
+
+  starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+
+  const starMaterial = new THREE.PointsMaterial({
+    color: 0xffffff,
+    size: 2, // Tamaño de cada estrella
+  });
+
+  const stars = new THREE.Points(starGeo, starMaterial);
+  scene.add(stars);
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    let positions = starGeo.attributes.position.array;
+    for (let i = 2; i < positions.length; i += 3) {
+      positions[i] -= 0.5; // Movimiento en Z
+      if (positions[i] < -800) positions[i] = 800; // Reinicia posición
+    }
+
+    starGeo.attributes.position.needsUpdate = true;
+    renderer.render(scene, camera);
+  }
+
+  animate();
+</script> -->

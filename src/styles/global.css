@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root{
+  color: white;
+}
+
+@font-face {
+  font-family: 'GeistBlack';
+  src: url('/fonts/Geist-Black.otf');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistBold';
+  src: url('/fonts/Geist-Bold.otf');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistMedium';
+  src: url('/fonts/Geist-Medium.otf');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistRegular';
+  src: url('/fonts/Geist-Regular.otf');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistLight';
+  src: url('/fonts/Geist-Light.otf');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeistThin';
+  src: url('/fonts/Geist-Thin.otf');
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-geist-black: 'GeistBlack', 'sans-serif';
+  --font-geist-bold: 'GeistBold', 'sans-serif';
+  --font-geist-medium: 'GeistMedium', 'sans-serif';
+  --font-geist-regular: 'GeistRegular', 'sans-serif';
+  --font-geist-light: 'GeistLight', 'sans-serif';
+  --font-geist-thin: 'GeistThin', 'sans-serif';
+}

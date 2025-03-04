@@ -1,0 +1,43 @@
+---
+import ProjectCard from "../ProjectCard.astro";
+import PresentationSection from "../shared/PresentationSection.astro";
+
+
+---
+
+
+
+<article class="flex justify-center items-center mt-52 flex-col">
+  <PresentationSection
+    subtitle="MY EXPERIENCE"
+    title="Projects"
+    description={["Throughout my career as a software developer, I have worked on various projects, ranging from web and mobile applications to cloud service integrations. My focus is on building efficient, scalable solutions with great user experiences, utilizing technologies like Next.js, React Native, FastAPI, and AWS. Here are some of my most relevant projects:"]}
+  />
+
+
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <ProjectCard 
+      isPrivate
+      imageProject="/enterprise.jpg"
+      project="Procedures APP" 
+      descriptionProject="Development of a web and mobile platform for business process management. I implemented scalable REST APIs using FastAPI and secure authentication with JWT. The web application was built with Next.js and Tailwind CSS, integrating PostgreSQL and AWS S3 storage. Additionally, I developed a mobile version in React Native and managed its deployment on Railway, Vercel, and app stores."
+      technologies={["Fastapi","Nextjs","Tailwind Css","PostgreSQL", "AWS S3", "React Native CLI", "Railway", "Vercel"]}
+    />
+    <ProjectCard 
+      isPrivate
+      imageProject="/qr-scan.jpg"
+      project="QR Presentation Card" 
+      descriptionProject="An application that allows an administrator to manage a CRUD of employees, including assigning job positions, emails, and photos. At the end, it generates a QR code that, when scanned, displays a custom design depending on the company the employee belongs to. The development was carried out using PostgreSQL, Astro Build, and AWS S3, with deployment on Vercel."
+      technologies={["Astro Build","AWS S3","PostgreSQL", "Railway", "Vercel"]}
+    />
+    <ProjectCard 
+      isPrivate={false}
+      linkProject="https://precioscopec.netlify.app"
+      imageProject="/prices-copec.jpg"
+      project="Prices COPEC" 
+      descriptionProject="Development of a web and mobile platform for business process management. I implemented scalable REST APIs using FastAPI and secure authentication with JWT. The web application was built with Next.js and Tailwind CSS, integrating PostgreSQL and AWS S3 storage. Additionally, I developed a mobile version in React Native and managed its deployment on Railway, Vercel, and app stores."
+      technologies={["Nextjs","Tailwind Css","Netlify"]}
+    />
+  </section>
+
+</article>
