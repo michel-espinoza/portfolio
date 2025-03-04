@@ -15,11 +15,11 @@ const {imageProject ,project, descriptionProject, technologies, isPrivate = true
 ---
 
 
-<article class="bg-[#24004f] px-4 pt-4 pb-10 w-[360px] rounded-sm">
+<article class="bg-[#24004f] px-4 pt-4 pb-10 w-[360px] rounded-sm flex flex-col gap-2">
   {
     isPrivate ?
     (
-    <div class="mb-4">
+    <div class="">
       <Image 
         src={imageProject}
         alt="enterprise image card"
@@ -30,7 +30,7 @@ const {imageProject ,project, descriptionProject, technologies, isPrivate = true
     </div>
     ) :
     (
-    <a href={linkProject} target="_blank" class="mb-4">
+    <a href={linkProject} target="_blank" class="">
       <Image 
         src={imageProject}
         alt="enterprise image card"
@@ -42,7 +42,7 @@ const {imageProject ,project, descriptionProject, technologies, isPrivate = true
     )
   }
 
-  <span class="text-violet-400 text-lg">{isPrivate ? "PRIVATE" : "PUBLIC"}</span>
+  <span class=`text-violet-400 text-lg`>{isPrivate ? "PRIVATE" : "PUBLIC"}</span>
   <h3 class="text-violet-300 mt-3 text-2xl font-geist-bold mb-2">{project}</h3>
   <p class="text-violet-100 font-geist-light text-sm mb-6">{descriptionProject}</p>
   <div class="flex flex-wrap gap-2 mt-2">
