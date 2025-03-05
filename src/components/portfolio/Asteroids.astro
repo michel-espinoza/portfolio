@@ -49,7 +49,7 @@
 
   // Cargar la textura y aplicarla a la esfera
   const textureLoader = new THREE.TextureLoader();
-  textureLoader.load('/asteroid.jpg', (texture) => {
+  textureLoader.load('/asteroid.webp', (texture) => {
     const sphereGeometry = new THREE.SphereGeometry(10, 32, 32); // Esfera en vez de cubo
     const sphereMaterial = new THREE.MeshStandardMaterial({ map: texture });
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
