@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://portfolio-bay-mu-56.vercel.app/
