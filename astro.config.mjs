@@ -4,9 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 
 import vue from '@astrojs/vue';
 
+import vercel from '@astrojs/vercel';
+
 // https://astro.build/config
 export default defineConfig({
   output:'server',
+
   vite:{
     plugins: [tailwindcss()]
   },
@@ -15,5 +18,6 @@ export default defineConfig({
     enabled:false
   },
 
-  integrations: [vue()]
+  integrations: [vue()],
+  adapter: vercel()
 });

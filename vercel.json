@@ -1,0 +1,22 @@
+{
+  "headers": [
+    {
+      "source": "/(.*).(avif|webp|svg|png|jpg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, stale-while-revalidate=120"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
