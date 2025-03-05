@@ -1,5 +1,6 @@
 ---
 
+import Form from '../components/Form.vue';
 import AboutMe from '../components/portfolio/AboutMe.astro';
 import Asteroids from '../components/portfolio/Asteroids.astro';
 import Education from '../components/portfolio/Education.astro';
@@ -15,4 +16,5 @@ import Layout from '../layouts/Layout.astro';
 	<Projects/>
 	<Technologies/>
 	<Education/>
+	<Form client:load/>
 </Layout>

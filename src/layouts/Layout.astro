@@ -3,11 +3,11 @@ import Navbar from '../components/shared/Navbar.astro'
 import '../styles/global.css'
 
 interface Props{
-  title:string;
-  description:string;
+  title?:string;
+  description?:string;
 }
 
-const {title = "Welcome to my portfolio | Michel Espinoza", description} = Astro.props
+const {title = "Welcome to my portfolio | Michel Espinoza", description = "If you need website development or the implementation of services, feel free to contact me."} = Astro.props
 ---
 
 <!doctype html>
@@ -18,6 +18,22 @@ const {title = "Welcome to my portfolio | Michel Espinoza", description} = Astro
 		<link rel="icon" type="image/svg+xml" href="/logo-portfolio.png" />
 		<meta name="generator" content={Astro.generator} />
     <meta name="description" content={description}>
+    <meta name="keywords" content="web development, portfolio, Michel Espinoza, website implementation, services, technology, software development, freelance developer" />
+    <meta name="author" content="Michel Espinoza" />
+<!-- Open Graph meta tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.michelespinoza.com" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/logo-portfolio.png" />
+<!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@michel_espinoza" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/logo-portfolio.png" />
+
+
 		<title>{title}</title>
 	</head>
 	<body class="bg-black">
