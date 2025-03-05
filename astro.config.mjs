@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite'
 
 import vue from '@astrojs/vue';
@@ -19,5 +19,13 @@ export default defineConfig({
   },
 
   integrations: [vue()],
-  adapter: vercel()
+  adapter: vercel(),
+  env:{
+    schema:{
+      VITE_PUBLIC_KEY_GIPHY: envField.string({
+        context:'client',
+        access:'public'
+      })
+    }
+  }
 });

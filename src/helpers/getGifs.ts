@@ -1,3 +1,5 @@
+import {VITE_PUBLIC_KEY_GIPHY} from 'astro:env/client' 
+
 interface Gif {
   id: string;
   title: string;
@@ -5,7 +7,7 @@ interface Gif {
 }
 
 export const getGifs = async (category: string): Promise<Gif[]> => {
-  const apiKey = "FUYrCtupQcyoR5eN9iQmoQIKoSiVWry4";
+  const apiKey = VITE_PUBLIC_KEY_GIPHY;
   const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&limit=12&q=${encodeURIComponent(category)}`;
 
   const resp = await fetch(url);
