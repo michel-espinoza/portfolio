@@ -1,4 +1,5 @@
 ---
+import Gifs from "../Gifs.vue";
 import ProjectCard from "../ProjectCard.astro";
 import PresentationSection from "../shared/PresentationSection.astro";
 
@@ -38,6 +39,10 @@ import PresentationSection from "../shared/PresentationSection.astro";
       descriptionProject="Development of a web and mobile platform for business process management. I implemented scalable REST APIs using FastAPI and secure authentication with JWT. The web application was built with Next.js and Tailwind CSS, integrating PostgreSQL and AWS S3 storage. Additionally, I developed a mobile version in React Native and managed its deployment on Railway, Vercel, and app stores."
       technologies={["Nextjs","Tailwind Css","Netlify"]}
     />
+  </section>
+
+  <section>
+    <Gifs client:load/>
   </section>
 
 </article>
