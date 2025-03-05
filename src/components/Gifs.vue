@@ -6,7 +6,7 @@
         <input
           v-model="searchQuery"
           name="gifSearch"
-          placeholder="Attack on Titan..."
+          placeholder="Search gifs..."
           class="px-2 rounded-full py-1 w-[200px] border border-purple-600 "
           type="text"
         />
