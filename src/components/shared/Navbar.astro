@@ -5,8 +5,8 @@ import { Image } from "astro:assets";
 ---
 
 
-<header class="flex justify-center items-center py-4">
-  <div class="w-1/6 flex justify-center items-center">
+<header class="flex justify-center items-center py-4 relative">
+  <div class="w-1/2 lg:w-1/6 flex justify-center items-center">
     <a href="#">
       <Image 
       class="object-cover w-20"
@@ -19,26 +19,57 @@ import { Image } from "astro:assets";
     />
     </a>
   </div>
-  <nav class="w-4/6 flex font-geist-medium">
+  <nav class="hidden lg:flex w-4/6 font-geist-medium">
     <ul class=" w-full flex justify-center items-center gap-6">
       <li class="">
-        <a href="#">About me</a>
+        <a href="#aboutMe">About me</a>
       </li>
       <li class="">
-        <a href="#">Projects</a>
+        <a href="#projects">Projects</a>
       </li>
       <li class="">
-        <a href="#">Tech Stack</a>
+        <a href="#techStack">Tech Stack</a>
       </li>
       <li>
-        <a href="#">Education</a>
+        <a href="#education">Education</a>
       </li>
     </ul>
   </nav>
 
-  <div class="w-1/6 flex justify-center items-center">
-    <a class="w-fit bg-white font-geist-medium rounded-full px-4 py-1 hover:scale-105 text-black" href="#">
+  <div class="lg:hidden w-1/2 flex justify-end items-center pr-[10%]">
+    <input id="burguer" class="w-12 h-12 opacity-0 z-10" type="checkbox" name="">
+    <img class="w-12 h-12 absolute" src="/burguer.svg" alt="">
+    <nav id="navResponsive" class="hidden font-geist-medium bg-[#000000dc] absolute m-auto left-0 right-0 top-[100px] w-full z-10 h-[350px]">
+      <ul class=" w-full flex flex-col justify-center items-center gap-6 ">
+        <li class="">
+          <a href="#aboutMe">About me</a>
+        </li>
+        <li class="">
+          <a href="#projects">Projects</a>
+        </li>
+        <li class="">
+          <a href="#techStack">Tech Stack</a>
+        </li>
+        <li>
+          <a href="#education">Education</a>
+        </li>
+        <li>
+          <a class="w-fit border border-white rounded-full px-4 py-1" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="w-1/6 hidden lg:flex justify-center items-center">
+    <a class="w-fit bg-white font-geist-medium rounded-full px-4 py-1 hover:scale-105 text-black" href="#contact">
       CONTACT
     </a>
   </div>
 </header>
+
+
+<style>
+  #burguer:checked ~ #navResponsive{
+    display: flex;
+  }
+</style>

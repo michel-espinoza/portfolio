@@ -7,7 +7,7 @@ import PresentationSection from "../shared/PresentationSection.astro";
 
 
 
-<article class="flex justify-center items-center mt-52 flex-col">
+<article class="flex justify-center items-center mt-20 lg:mt-52 flex-col" id="projects">
   <PresentationSection
     subtitle="MY EXPERIENCE"
     title="Projects"
@@ -15,7 +15,7 @@ import PresentationSection from "../shared/PresentationSection.astro";
   />
 
 
-  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <section class="max-w-[80%] 2xl:max-w-[60%] 2xl:min-w-[1100px] grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6">
     <ProjectCard 
       isPrivate
       imageProject="/enterprise.jpg"

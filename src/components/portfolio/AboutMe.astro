@@ -3,15 +3,15 @@ import { Image } from "astro:assets";
 ---
 
 <article class="relative flex justify-center items-center">
-  <div class="max-w-1/2 flex gap-6 relative">
+  <div class="max-w-[80%] 2xl:max-w-[60%] flex flex-col lg:flex-row gap-6 relative justify-center items-center" id="aboutMe">
     
     <!-- Contenedor del texto con efecto de escritura -->
-    <div class="flex flex-col gap-6 justify-center items-start">
-      <h1 class="font-geist-black text-5xl">
-        <span id="typing-text"></span><span id="cursor" class="text-purple-500">|</span>
+    <div class="flex flex-col gap-6 justify-center items-start mt-20 lg:mt-0">
+      <h1 class="font-geist-black text-lg md:text-2xl xl:text-3xl 2xl:text-5xl">
+        <span class="" id="typing-text"></span><span id="cursor" class="text-purple-500">|</span>
       </h1>
   
-      <p id="my-description" class="font-geist-medium text-xl">
+      <p id="my-description" class="font-geist-medium text-md xl:text-xl">
         I am a self-taught developer with a strong passion for continuous learning and exploring new technologies. 
         Over time, my professional focus has evolved toward web development and hybrid mobile applications. 
         While my expertise lies primarily in front-end development, I also have experience with backend technologies.
@@ -20,7 +20,7 @@ import { Image } from "astro:assets";
 
     <div class="hologram min-w-[400px]">
       <Image
-        class="hologram object-cover w-full"
+        class="hologram object-cover w-full max-w-[300px]"
         src="/Im.png"
         alt="Logo portfolio"
         width={500}
@@ -35,19 +35,18 @@ import { Image } from "astro:assets";
 
 <style>
 
+  @reference "../../styles/global.css";
+
   #my-description::before{
     content: "{";
     color: #a855f7; /* Purple-500 */
-    font-weight: bold;
-    font-size: 2rem;
+    @apply text-2xl xl:text-3xl;
   }
 
   #my-description::after{
     content: "}";
     color: #a855f7; /* Purple-500 */
-    font-weight: bold;
-    margin-right: 5px;
-    font-size: 2rem;
+    @apply text-2xl xl:text-3xl;
   }
 
   /* Animación del cursor parpadeante */
@@ -76,6 +75,7 @@ import { Image } from "astro:assets";
     animation: flicker 1.5s infinite alternate;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    @apply flex justify-center items-center;
   }
 
   @keyframes flicker {
@@ -119,7 +119,7 @@ import { Image } from "astro:assets";
 </style>
 
 <script>
-const text = "Hi, I'm <Michel Espinoza />";
+const text = "Hi, I'm  <Michel Espinoza />";
 const typingSpeed = 100;
 const erasingSpeed = 50;
 const delayBeforeErase = 2000;

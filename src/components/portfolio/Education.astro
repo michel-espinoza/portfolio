@@ -1,21 +1,31 @@
 ---
 import PresentationSection from "../shared/PresentationSection.astro";
 
-
+const certifications = [
+  { certification: "SOFTWARE PROGRAMMING" },
+  { certification: "IT PROJECT MANAGEMENT" },
+  { certification: "INTERMEDIATE-ADVANCED ENGLISH" },
+  { certification: "SOFTWARE QUALITY" },
+  { certification: "BUSINESS INTELLIGENCE" },
+  { certification: "SOFTWARE ARCHITECTURE" },
+  { certification: "COMPUTER REQUIREMENTS ANALYSIS AND PLANNING" },
+  { certification: "DATA MODELING ANALYSIS AND DEVELOPMENT" },
+];
 ---
 
-
-
-
-<article class="flex justify-center items-center flex-col mb-20">
+<article class="flex justify-center items-center flex-col mb-20" id="education">
   <PresentationSection
     subtitle="EDUCATION"
     title="EDUCATION AND CERTIFICATIONS"
     description={["I studied at DuocUC, a professional institute in Santiago, Chile, where I completed a 4-year degree in Computer Engineering. During this program, I learned about various fields, but I focused on web and mobile development, which is what I’m most passionate about. Today, I continue to study on my own and learn every day. I am currently waiting to begin my web developer diploma at the Pontifical Catholic University of Chile."]}
   />
 
-  <div class="w-1/2 flex flex-col gap-4">
+  <div class="max-w-[80%] 2xl:max-w-[60%] w-full flex flex-col gap-4">
     <h3 class="font-geist-bold text-2xl">CERTIFICATIONS</h3>
-    <p class="font-geist-light">SOFTWARE PROGRAMMING, IT PROJECT MANAGEMENT, INTERMEDIATE-ADVANCED ENGLISH, SOFTWARE QUALITY, BUSINESS INTELLIGENCE, SOFTWARE ARCHITECTURE, COMPUTER REQUIREMENTS ANALYSIS AND PLANNING, DATA MODELING ANALYSIS AND DEVELOPMENT.</p>
+    <ul class="font-geist-light text-sm xl:text-xl flex flex-wrap justify-center items-center gap-4">
+      {certifications.map(cert => (
+        <li class="border border-purple-500 rounded-full w-fit px-4 py-1 bg-[#4d287e92] text-center">{cert.certification}</li>
+      ))}
+    </ul>
   </div>
 </article>

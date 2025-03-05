@@ -1,25 +1,27 @@
 <template>
-  <form @submit.prevent="onSubmit" class="form">
-    <div class="field">
-      <label class="labelField" for="name">Name</label>
-      <input id="name" v-model="name" type="text" v-bind="nameAttrs"/>
-      <span class="errorMessage" v-if="errors['name']">{{errors['name']}}</span>
-    </div>
+  <div class="max-w-[80%] 2xl:max-w-[60%]">
+    <form @submit.prevent="onSubmit" class="form" id="contact">
+      <div class="field">
+        <label class="labelField" for="name">Name</label>
+        <input id="name" v-model="name" type="text" v-bind="nameAttrs"/>
+        <span class="errorMessage" v-if="errors['name']">{{errors['name']}}</span>
+      </div>
 
-    <div class="field">
-      <label class="labelField" for="email">Email</label>
-      <input id="email" v-model="email" type="email" v-bind="emailAttrs"/>
-      <span class="errorMessage" v-if="errors['email']">{{ errors['email'] }}</span>
-    </div>
+      <div class="field">
+        <label class="labelField" for="email">Email</label>
+        <input id="email" v-model="email" type="email" v-bind="emailAttrs"/>
+        <span class="errorMessage" v-if="errors['email']">{{ errors['email'] }}</span>
+      </div>
 
-    <div class="field">
-      <label class="labelField" for="message">Message</label>
-      <input id="message" v-model="message" type="text" v-bind="messageAttrs"/>
-      <span class="errorMessage" v-if="errors['message']">{{ errors['message'] }}</span>
-    </div>
+      <div class="field">
+        <label class="labelField" for="message">Message</label>
+        <input id="message" v-model="message" type="text" v-bind="messageAttrs"/>
+        <span class="errorMessage" v-if="errors['message']">{{ errors['message'] }}</span>
+      </div>
 
-    <button class="buttonForm" type="submit">Send</button>
-  </form>
+      <button class="buttonForm" type="submit">Send</button>
+    </form>
+  </div>
 </template>
 
 <script setup>
@@ -83,10 +85,10 @@ const onSubmit = handleSubmit((values) => {
 
 
 <style scoped>
-@reference "../../styles/global.css";
+@reference "../styles/global.css";
 
 .form {
-  @apply mb-10 w-[400px] flex flex-col gap-6 m-auto justify-center items-center;
+  @apply mb-10 w-[250px] sm:w-[400px] flex flex-col gap-6 m-auto justify-center items-center;
 }
 
 .errorMessage{

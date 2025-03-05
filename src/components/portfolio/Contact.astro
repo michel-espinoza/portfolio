@@ -1,0 +1,25 @@
+---
+import Form from "../Form.vue";
+import PresentationSection from "../shared/PresentationSection.astro";
+
+const serviceId = import.meta.env.VITE_SERVICE_ID;
+const templateId = import.meta.env.VITE_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+---
+
+
+
+<article class="flex justify-center items-center flex-col w-full">
+
+  <PresentationSection
+    subtitle="CONTACT"
+    title="CONTACT ME"
+    description={["If you need advice, custom development, or any kind of service related to web or mobile development, feel free to get in touch with me. With experience in creating innovative and functional applications for both web and mobile platforms, I use the latest technologies and agile methodologies to ensure optimal performance and the best user experience. Whether you're looking to build a new app from scratch or improve an existing project, I'm here to assist you every step of the way. Contact me, and let's work together to take your ideas to the next level!"]}
+  />
+
+  <Form client:load 
+    service-id={serviceId} 
+    template-id={templateId} 
+    public-key={publicKey} 
+  />
+</article>

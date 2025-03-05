@@ -59,7 +59,7 @@ const othersImages = [
 ];
 ---
 
-<article class="flex justify-center items-center flex-col my-52">
+<article class="flex justify-center items-center flex-col my-20 lg:my-52" id="techStack">
   <PresentationSection
     subtitle="MY TECH STACK"
     title="Technologies"
@@ -70,54 +70,54 @@ const othersImages = [
     ]}
   />
 
-  <section class="w-1/2 flex flex-col justify-center items-center gap-4">
+  <section class="max-w-[80%] 2xl:max-w-[60%] flex flex-col justify-center items-center gap-4">
     <CardTechnologies 
       imageTech={frontendImages.map((tech) => tech.src)} 
       alt={frontendImages.map((tech) => tech.alt)} 
       title="Frontend" 
-      techDescription=""
+      techDescription={["React.js","Astro Build","Tailwind Css", "Angular", "Ionic", "Nextjs"]}
     />
 
     <CardTechnologies 
       imageTech={languagesImages.map((tech) => tech.src)} 
       alt={languagesImages.map((tech) => tech.alt)} 
       title="Programming Languages" 
-      techDescription=""
+      techDescription={["Typescript","Javascript","Python","Php", "Dart"]}
     />
 
     <CardTechnologies 
       imageTech={mobileImages.map((tech) => tech.src)} 
       alt={mobileImages.map((tech) => tech.alt)} 
       title="Mobile" 
-      techDescription=""
+      techDescription={["React Native","Flutter"]}
     />
 
     <CardTechnologies 
       imageTech={backendImages.map((tech) => tech.src)} 
       alt={backendImages.map((tech) => tech.alt)} 
       title="Backend" 
-      techDescription=""
+      techDescription={["Fastapi","Django","Nodejs"]}
     />
 
     <CardTechnologies 
       imageTech={dataBasesImages.map((tech) => tech.src)} 
       alt={dataBasesImages.map((tech) => tech.alt)} 
       title="Data Bases" 
-      techDescription=""
+      techDescription={["PostgreSQL","MongoDB","MySQL"]}
     />
 
     <CardTechnologies 
       imageTech={devOpsImages.map((tech) => tech.src)} 
       alt={devOpsImages.map((tech) => tech.alt)} 
       title="Cloud & DevOps" 
-      techDescription=""
+      techDescription={["AWS IAM","AWS S3", "Docker"]}
     />
 
     <CardTechnologies 
       imageTech={othersImages.map((tech) => tech.src)} 
       alt={othersImages.map((tech) => tech.alt)} 
-      title="Cloud & DevOps" 
-      techDescription=""
+      title="Others" 
+      techDescription={["Git","Gifma","Postman","Linux","Windows","Mac OS"]}
     />
 
 

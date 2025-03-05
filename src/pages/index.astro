@@ -4,15 +4,11 @@
 import AboutMe from '../components/portfolio/AboutMe.astro';
 import Asteroids from '../components/portfolio/Asteroids.astro';
 import Education from '../components/portfolio/Education.astro';
-import Form from '../components/portfolio/Form.vue';
+import Form from '../components/Form.vue';
 import Projects from '../components/portfolio/Projects.astro';
 import Technologies from '../components/portfolio/Technologies.astro';
 import Layout from '../layouts/Layout.astro';
-
-
-const serviceId = import.meta.env.VITE_SERVICE_ID;
-const templateId = import.meta.env.VITE_TEMPLATE_ID;
-const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+import Contact from '../components/portfolio/Contact.astro';
 ---
 
 <Layout>
@@ -21,9 +17,5 @@ const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 	<Projects/>
 	<Technologies/>
 	<Education/>
-	<Form client:load 
-		service-id={serviceId} 
-		template-id={templateId} 
-		public-key={publicKey} 
-	/>
+	<Contact/>
 </Layout>
