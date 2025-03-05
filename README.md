@@ -46,4 +46,4 @@ If you want to run this project locally, follow these steps:
    bun run dev
 
 6. **Open the project in your browser**
-   The site will be available at http://localhost:3000 (or another available port).
+   The site will be available at http://localhost:4321 (or another available port).
